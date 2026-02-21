@@ -37,3 +37,27 @@ constexpr float epsilon = 1e-5f;
 // window default size
 #define WIN_DEFAULT_WIDTH 1280
 #define WIN_DEFAULT_HEIGHT 720
+
+// window center position
+#define CENTER_X (gWinWidth * 0.5f)
+#define CENTER_Y (gWinHeight * 0.5f)
+#define CENTER (Vector2(CENTER_X, CENTER_Y))
+
+// assert macro
+#define CHECK(hr) do { assert(SUCCEEDED(hr)); } while(0)
+
+// use singleton pattern
+#define DECLARE_SINGLETON(CLASS_NAME)							\
+private:														\
+CLASS_NAME();													\
+~CLASS_NAME() = default;										\
+public:															\
+CLASS_NAME(const CLASS_NAME& other) = delete;					\
+CLASS_NAME& operator=(const CLASS_NAME& other) = delete;		\
+CLASS_NAME(CLASS_NAME&& other) = delete;						\
+CLASS_NAME& operator=(CLASS_NAME&& other) = delete;				\
+static CLASS_NAME& GetInstance()								\
+{																\
+	static CLASS_NAME instance;									\
+	return instance;											\
+}
