@@ -12,12 +12,18 @@
     <ClCompile Include="Managers\TimeManager.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
+    <ClCompile Include="Managers\InputManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="Managers\TimeManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\InputManager.h">
       <Filter>Managers</Filter>
     </ClInclude>
   </ItemGroup>
