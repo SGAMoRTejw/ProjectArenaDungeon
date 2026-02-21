@@ -21,6 +21,7 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include <chrono>
 
 // window runtime header
 #include <wrl.h>
@@ -61,3 +62,10 @@ static CLASS_NAME& GetInstance()								\
 	static CLASS_NAME instance;									\
 	return instance;											\
 }
+
+// Managers
+#include "Managers/TimeManager.h"
+
+// Manager access macros
+#define TIME TimeManager::GetInstance()
+#define DELTA TIME.GetDeltaTime()
