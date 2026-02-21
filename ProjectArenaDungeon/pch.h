@@ -22,10 +22,16 @@
 #include <memory>
 #include <iostream>
 #include <chrono>
+#include <array>
 
 // window runtime header
 #include <wrl.h>
 using Microsoft::WRL::ComPtr;
+
+// DirectXTK
+#include "_Libraries/DirectXTK/SimpleMath.h"
+using namespace DirectX;
+using namespace SimpleMath;
 
 // Extern Globals
 extern HWND gHandle;
@@ -65,7 +71,9 @@ static CLASS_NAME& GetInstance()								\
 
 // Managers
 #include "Managers/TimeManager.h"
+#include "Managers/InputManager.h"
 
 // Manager access macros
 #define TIME TimeManager::GetInstance()
 #define DELTA TIME.GetDeltaTime()
+#define INPUT InputManager::GetInstance()
