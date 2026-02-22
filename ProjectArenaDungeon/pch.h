@@ -23,6 +23,14 @@
 #include <iostream>
 #include <chrono>
 #include <array>
+#include <vector>
+
+// DirectX D3D11
+#include <d3d11.h>
+#include <d3dcompiler.h>
+#pragma comment(lib, "dxgi.lib")
+#pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "d3dcompiler.lib")
 
 // window runtime header
 #include <wrl.h>
@@ -72,8 +80,12 @@ static CLASS_NAME& GetInstance()								\
 // Managers
 #include "Managers/TimeManager.h"
 #include "Managers/InputManager.h"
+#include "Managers/GraphicsManager.h"
 
 // Manager access macros
 #define TIME TimeManager::GetInstance()
 #define DELTA TIME.GetDeltaTime()
 #define INPUT InputManager::GetInstance()
+#define GRAPHICS GraphicsManager::GetInstance()
+#define DEVICE GRAPHICS.GetDevice()
+#define DEVICE_CONTEXT GRAPHICS.GetDeviceContext()
