@@ -150,6 +150,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Managers\GraphicsManager.cpp" />
     <ClCompile Include="Managers\InputManager.cpp" />
     <ClCompile Include="Managers\TimeManager.cpp" />
     <ClCompile Include="pch.cpp">
@@ -158,6 +159,7 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Managers\GraphicsManager.h" />
     <ClInclude Include="Managers\InputManager.h" />
     <ClInclude Include="Managers\TimeManager.h" />
     <ClInclude Include="pch.h" />
