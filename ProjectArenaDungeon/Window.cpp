@@ -80,6 +80,9 @@ WPARAM Window::Run()
 {
     MSG msg;
 
+    // FPS 144
+    TIME.SetTargetFPS(144.0);
+
     // 기본 메시지 루프입니다:
     while (true)
     {
@@ -94,6 +97,16 @@ WPARAM Window::Run()
         else
         {
             // Managers Update
+            INPUT.Update();
+            TIME.Update();
+
+            GRAPHICS.Begin();
+            {
+
+            }
+            GRAPHICS.End();
+
+            TIME.WaitToTargetFrameRate();
         }
     }
 
