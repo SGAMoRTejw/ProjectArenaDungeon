@@ -4,9 +4,11 @@
 Window::Window(const WinDesc& initDesc)
     :desc(initDesc)
 {
+    // 윈도우 클래스 등록
     WORD wHr = MyRegisterClass(desc);
     assert(wHr != 0);
 
+    // 윈도우 생성
     gHandle = desc.handle = CreateWindowExW
     (
         WS_EX_APPWINDOW,
@@ -25,6 +27,7 @@ Window::Window(const WinDesc& initDesc)
 
     assert(desc.handle != nullptr);
 
+    // 클라이언트 영역 크기를 기준으로 실제 윈도우 크기 설정
     RECT rect = { 0, 0, LONG(desc.width), LONG(desc.height) };
 
     AdjustWindowRectEx(&rect, WS_OVERLAPPEDWINDOW, false, 0);
@@ -32,6 +35,7 @@ Window::Window(const WinDesc& initDesc)
     const long& winWidth = rect.right - rect.left;
     const long& winHeight = rect.bottom - rect.top;
 
+    // 화면 중앙 배치
     const UINT& winX = UINT((GetSystemMetrics(SM_CXSCREEN) - winWidth) * 0.5f);
     const UINT& winY = UINT((GetSystemMetrics(SM_CYSCREEN) - winHeight) * 0.5f);
 
@@ -48,11 +52,13 @@ Window::Window(const WinDesc& initDesc)
     ShowWindow(desc.handle, SW_SHOWNORMAL);
     UpdateWindow(desc.handle);
 
+    // 커서 표시
     ShowCursor(true);
 }
 
 Window::~Window()
 {
+    // 윈도우 클래스 등록 해제
     UnregisterClassW(desc.appName.c_str(), desc.instance);
 }
 
@@ -60,6 +66,7 @@ ATOM Window::MyRegisterClass(const WinDesc& initDesc)
 {
     WNDCLASSEXW wcex = { 0 };
 
+    // 윈도우 클래스 정보 설정
     wcex.cbSize = sizeof(WNDCLASSEX);
     wcex.style = CS_HREDRAW | CS_VREDRAW | CS_DBLCLKS;
     wcex.lpfnWndProc = &WndProc;
@@ -80,12 +87,13 @@ WPARAM Window::Run()
 {
     MSG msg;
 
-    // FPS 144
+    // 타겟 FPS 설정(144)
     TIME.SetTargetFPS(144.0);
 
     // 기본 메시지 루프입니다:
     while (true)
     {
+        // 윈도우 메시지 처리
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
             if (msg.message == WM_QUIT)
@@ -106,6 +114,7 @@ WPARAM Window::Run()
             }
             GRAPHICS.End();
 
+            // 프레임 제한
             TIME.WaitToTargetFrameRate();
         }
     }
@@ -118,6 +127,7 @@ LRESULT Window::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     switch (message)
     {
     case WM_DESTROY:
+        // 윈도우 종료 시 메시지 루프 종료 요청
         PostQuitMessage(0);
 
         return 0;
