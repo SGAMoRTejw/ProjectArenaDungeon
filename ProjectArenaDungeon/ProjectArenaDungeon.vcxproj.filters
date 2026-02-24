@@ -4,6 +4,12 @@
     <Filter Include="Managers">
       <UniqueIdentifier>{ade47560-c11a-4edf-99be-40edc4d2450d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Renders">
+      <UniqueIdentifier>{8978712c-3eb6-42e6-b52b-d9a89d8c7f3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renders\ConstantBuffers">
+      <UniqueIdentifier>{81656e91-f424-41dd-ac48-eb3e0d15b402}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -31,6 +37,12 @@
     </ClInclude>
     <ClInclude Include="Managers\GraphicsManager.h">
       <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\ConstantBuffers\ConstantBuffer.h">
+      <Filter>Renders\ConstantBuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\ConstantBuffers\GlobalBuffers.h">
+      <Filter>Renders\ConstantBuffers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
