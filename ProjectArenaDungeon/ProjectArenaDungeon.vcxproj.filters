@@ -10,6 +10,9 @@
     <Filter Include="Renders\ConstantBuffers">
       <UniqueIdentifier>{81656e91-f424-41dd-ac48-eb3e0d15b402}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Renders\IA">
+      <UniqueIdentifier>{1998f8eb-5b5d-4b17-9799-083eb774fc77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -23,6 +26,15 @@
     </ClCompile>
     <ClCompile Include="Managers\GraphicsManager.cpp">
       <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\IA\IndexBuffer.cpp">
+      <Filter>Renders\IA</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\IA\InputLayout.cpp">
+      <Filter>Renders\IA</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\IA\VertexBuffer.cpp">
+      <Filter>Renders\IA</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +55,15 @@
     </ClInclude>
     <ClInclude Include="Renders\ConstantBuffers\GlobalBuffers.h">
       <Filter>Renders\ConstantBuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\IA\IndexBuffer.h">
+      <Filter>Renders\IA</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\IA\InputLayout.h">
+      <Filter>Renders\IA</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\IA\VertexBuffer.h">
+      <Filter>Renders\IA</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

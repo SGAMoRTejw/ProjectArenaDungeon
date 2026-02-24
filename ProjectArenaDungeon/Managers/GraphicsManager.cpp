@@ -8,7 +8,7 @@ GraphicsManager::GraphicsManager()
 
 void GraphicsManager::Initialize()
 {
-    // swapchain에 대한 description
+    // SwapChain description
     DXGI_SWAP_CHAIN_DESC desc{};
 
     desc.BufferDesc.Width = 0;
@@ -26,6 +26,7 @@ void GraphicsManager::Initialize()
     desc.BufferCount = 2;
     desc.OutputWindow = gHandle;
     desc.Windowed = true;
+    // Tearing 허용
     desc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
     desc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING;
 
@@ -37,6 +38,7 @@ void GraphicsManager::Initialize()
     // VS에서 에러 내용 확인을 위한 flag
 #endif
 
+    // 지원 feature level 우선순위
     std::vector<D3D_FEATURE_LEVEL> featureLevels
     {
         D3D_FEATURE_LEVEL_11_1,
@@ -45,6 +47,7 @@ void GraphicsManager::Initialize()
         D3D_FEATURE_LEVEL_10_0
     };
 
+    // Device + SwapChain 생성
     HRESULT hr = D3D11CreateDeviceAndSwapChain
     (
         nullptr,
@@ -63,6 +66,7 @@ void GraphicsManager::Initialize()
     );
     CHECK(hr);
 
+    // Sampler state 생성 (Linear / Point)
     CD3D11_SAMPLER_DESC samplerDesc(D3D11_DEFAULT);
     samplerDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
     samplerDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
@@ -77,7 +81,7 @@ void GraphicsManager::Initialize()
 
     deviceContext->PSSetSamplers(0, 1, samplerLinear.GetAddressOf());
 
-    // alpha blending
+    // Alpha blending state 생성
     CD3D11_BLEND_DESC blendDesc(D3D11_DEFAULT);
     blendDesc.RenderTarget[0].BlendEnable = true;
     blendDesc.RenderTarget[0].SrcBlend = D3D11_BLEND_SRC_ALPHA;
@@ -91,6 +95,7 @@ void GraphicsManager::Initialize()
     hr = device->CreateBlendState(&blendDesc, &blendState);
     CHECK(hr);
 
+    // BackBuffer RTV + viewport
     CreateBackBuffer();
 }
 
@@ -116,6 +121,7 @@ void GraphicsManager::CreateBackBuffer()
     );
     CHECK(hr);
 
+    // Viewport 설정 (전역 윈도우 크기 사용)
     viewport.TopLeftX = 0.0f;
     viewport.TopLeftY = 0.0f;
     viewport.Width = gWinWidth;
@@ -131,15 +137,16 @@ void GraphicsManager::Begin()
     deviceContext->OMSetRenderTargets(1, rtv.GetAddressOf(), nullptr);
     deviceContext->ClearRenderTargetView(rtv.Get(), clearColor);
 
-    // BlendState 세팅
+    // BlendState 설정 (Alpha blending)
     deviceContext->OMSetBlendState(blendState.Get(), nullptr, 0xFFFFFFFF);
 }
 
 void GraphicsManager::End()
 {
-    // 수직 동기화 OFF
+    // 수직 동기화
+    // - 0: 수직 동기화 OFF
+    // - 1: 수직 동기화 ON
     HRESULT hr = swapChain->Present(0, DXGI_PRESENT_ALLOW_TEARING);
-    // 수직 동기화 ON
     //HRESULT hr = swapChain->Present(1,0);
     
     CHECK(hr);

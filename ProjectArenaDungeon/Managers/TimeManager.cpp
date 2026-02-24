@@ -48,8 +48,11 @@ void TimeManager::WaitToTargetFrameRate()
 		return;
 	}
 
-	// 현재 시간과 경과 시간을 기준으로 목표 시간(targetFrameTime)에 도달하지 못한 경우
-	// 대기하며 현재 시간과 경과 시간을 갱신
+	// 현재 시간과 경과 시간을 기준으로 
+	// 목표 시간(targetFrameTime)에 도달하지 못한 경우 대기하며
+	// 현재 시간과 경과 시간을 갱신
+	// NOTE:
+	// - CPU 사용량이 증가할 수 있다. 개선 방안 모색.
 	TimePoint now = Clock::now();
 	Duration elapsed = now - currentTime;
 
