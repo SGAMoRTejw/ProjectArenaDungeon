@@ -152,6 +152,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Managers\GraphicsManager.cpp" />
     <ClCompile Include="Managers\InputManager.cpp" />
+    <ClCompile Include="Managers\ShaderManager.cpp" />
     <ClCompile Include="Managers\TimeManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -164,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="Managers\GraphicsManager.h" />
     <ClInclude Include="Managers\InputManager.h" />
+    <ClInclude Include="Managers\ShaderManager.h" />
     <ClInclude Include="Managers\TimeManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Renders\ConstantBuffers\ConstantBuffer.h" />
