@@ -24,6 +24,7 @@
 #include <chrono>
 #include <array>
 #include <vector>
+#include <span>
 
 // DirectX D3D11
 #include <d3d11.h>
