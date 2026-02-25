@@ -1,14 +1,27 @@
 #pragma pack_matrix(row_major)
 
+// NOTE: Vector2¿Í ¸ÂÃã
+//struct VertexInput
+//{
+//    float4 position : POSITION;
+//    float2 uv : TEXCOORD;
+//};
+//
+//struct PixelInput
+//{
+//    float4 position : SV_POSITION;
+//    float2 uv : TEXCOORD;
+//};
+
 struct VertexInput
 {
-    float4 position : POSITION;
+    float2 position : POSITION;
     float2 uv : TEXCOORD;
 };
 
 struct PixelInput
 {
-    float4 position : SV_POSITION;
+    float2 position : SV_POSITION;
     float2 uv : TEXCOORD;
 };
 
