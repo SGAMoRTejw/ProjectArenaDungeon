@@ -1,5 +1,7 @@
 #pragma once
 
+class GameInstance;
+
 // WinDesc
 // - 윈도우 생성에 피룡한 초기 설정 정보
 // - 앱 이름, 인스턴스 핸들, 윈도우 핸들, 초기 크기 정보
@@ -40,4 +42,6 @@ private:
 	static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 	WinDesc desc;
+
+	static std::unique_ptr<GameInstance> gameInstance;
 };

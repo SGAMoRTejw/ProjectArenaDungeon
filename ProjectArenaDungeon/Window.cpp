@@ -1,5 +1,8 @@
 #include "pch.h"
 #include "Window.h"
+#include "GameInstance.h"
+
+std::unique_ptr<GameInstance> Window::gameInstance = nullptr;
 
 Window::Window(const WinDesc& initDesc)
     :desc(initDesc)
@@ -85,6 +88,9 @@ ATOM Window::MyRegisterClass(const WinDesc& initDesc)
 
 WPARAM Window::Run()
 {
+    gameInstance = std::make_unique<GameInstance>();
+    gameInstance->Init();
+
     MSG msg;
 
     // Å¸°Ù FPS ¼³Á¤(144)
@@ -108,9 +114,11 @@ WPARAM Window::Run()
             INPUT.Update();
             TIME.Update();
 
+            gameInstance->Update();
+
             GRAPHICS.Begin();
             {
-
+                gameInstance->Render();
             }
             GRAPHICS.End();
 

@@ -22,6 +22,7 @@
 #include <cassert>
 
 // C++ runtime header
+#include <cstddef>
 #include <string>
 #include <memory>
 #include <iostream>
