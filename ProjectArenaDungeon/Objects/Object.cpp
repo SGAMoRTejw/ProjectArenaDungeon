@@ -4,7 +4,7 @@
 // Components
 #include "Components/Component.h"
 #include "Components/Transform.h"
-#include "Components/Collider.h"
+//#include "Components/Collider.h"
 
 Object::Object(const std::string& name, DirectX::SimpleMath::Vector2 position, DirectX::SimpleMath::Vector2 scale, float rotation)
 	: name(name)
@@ -60,29 +60,29 @@ void Object::Render()
 	}
 }
 
-void Object::OnCollisionEnter(Collider* other)
-{
-	if (!bActive)
-		return;
-
-	for (const auto& component : updateList)
-	{
-		if (component)
-			component->OnCollisionEnter(other);
-	}
-}
-
-void Object::OnCollisionExit(Collider* other)
-{
-	if (!bActive)
-		return;
-
-	for (const auto& component : updateList)
-	{
-		if (component)
-			component->OnCollisionExit(other);
-	}
-}
+//void Object::OnCollisionEnter(Collider* other)
+//{
+//	if (!bActive)
+//		return;
+//
+//	for (const auto& component : updateList)
+//	{
+//		if (component)
+//			component->OnCollisionEnter(other);
+//	}
+//}
+//
+//void Object::OnCollisionExit(Collider* other)
+//{
+//	if (!bActive)
+//		return;
+//
+//	for (const auto& component : updateList)
+//	{
+//		if (component)
+//			component->OnCollisionExit(other);
+//	}
+//}
 
 void Object::AddComponent(const std::shared_ptr<Component>& component)
 {

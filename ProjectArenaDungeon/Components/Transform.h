@@ -75,7 +75,7 @@ private:
 	DirectX::SimpleMath::Vector2 scale = DirectX::SimpleMath::Vector2(1.0f, 1.0f);
 	float rotation = 0.0f;
 
-	DirectX::SimpleMath::Matrix world = DirectX::SimpleMath::Matrix::Identity;
+	DirectX::SimpleMath::Matrix world;
 	std::unique_ptr<WorldBuffer> wb;
 
 	bool bDirty = true;

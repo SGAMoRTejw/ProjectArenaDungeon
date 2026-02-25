@@ -36,13 +36,13 @@ public:
 	// - 매 프레임 렌더링 호출
 	virtual void Render();
 
-	// OnCollisionEnter
-	// - 충돌 시작 시점 이벤트 전달
-	virtual void OnCollisionEnter(Collider* other);
-
-	// OnCollisionExit
-	// - 충돌 종료 시점 이벤트 전달
-	virtual void OnCollisionExit(Collider* other);
+	//// OnCollisionEnter
+	//// - 충돌 시작 시점 이벤트 전달
+	//virtual void OnCollisionEnter(Collider* other);
+	//
+	//// OnCollisionExit
+	//// - 충돌 종료 시점 이벤트 전달
+	//virtual void OnCollisionExit(Collider* other);
 
 	// AddComponent
 	// - 컴포넌트를 오브젝트에 결합

@@ -3,7 +3,8 @@
 #include <vector>
 #include <utility>
 
-class Object;
+#include "Objects/Object.h"
+
 class GameContext;     // 런 전체 상태
 class DirectorSystem;  // 전투/이벤트/선택 흐름 제어
 
