@@ -2,9 +2,7 @@
 #include "GameInstance.h"
 
 // Scenes
-#include "Scenes/Scene.h"
-// TODO: 테스트 씬 클래스가 생기면 include
-// #include "Scenes/TestScene.h"
+#include "Scenes/SceneList.h"
 
 GameInstance::GameInstance() {}
 
@@ -22,8 +20,9 @@ void GameInstance::Init()
 	// TODO: 전역 유틸 초기화
 	// Random::Init();
 
-	// TODO: 테스트 씬
-	// sceneList.push_back(std::make_shared<TestScene>());
+	// 씬 추가
+	//sceneList.push_back(std::make_shared<Loadout>());
+	sceneList.push_back(std::make_shared<Scene_TestFeature>());
 
 	if (!sceneList.empty())
 	{
@@ -40,7 +39,6 @@ void GameInstance::Update()
 	// - 디버그: 강제로 다시 로드 (Destroy -> Init)
 	if (INPUT.GetKeyPress(VK_F1)) RequestSceneChange(0, false);
 	if (INPUT.GetKeyPress(VK_F2)) RequestSceneChange(1, false);
-	if (INPUT.GetKeyPress(VK_F3)) RequestSceneChange(2, false);
 	// 강제 재시작 예시
 	//if (INPUT.GetKeyPress(VK_F5)) RequestSceneChange(currentSceneIndex, true);
 

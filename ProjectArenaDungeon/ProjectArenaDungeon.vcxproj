@@ -169,6 +169,7 @@
     <ClCompile Include="Resources\Mesh.cpp" />
     <ClCompile Include="Resources\Texture.cpp" />
     <ClCompile Include="Resources\VertexType.cpp" />
+    <ClCompile Include="Scenes\TestScenes\Scene_TestFeature.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +192,9 @@
     <ClInclude Include="Resources\Mesh.h" />
     <ClInclude Include="Resources\Texture.h" />
     <ClInclude Include="Resources\VertexType.h" />
+    <ClInclude Include="Scenes\Scene.h" />
+    <ClInclude Include="Scenes\SceneList.h" />
+    <ClInclude Include="Scenes\TestScenes\Scene_TestFeature.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
