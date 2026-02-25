@@ -3,7 +3,7 @@
 
 void Shader::CompileShader(const std::wstring& path, const std::string& entryName, const std::string& profile, ID3DBlob** blob)
 {
-	ComPtr<ID3DBlob> error;
+	Microsoft::WRL::ComPtr<ID3DBlob> error;
 	
 	HRESULT hr = D3DCompileFromFile
 	(
@@ -20,7 +20,7 @@ void Shader::CompileShader(const std::wstring& path, const std::string& entryNam
 	CheckShaderError(hr, error);
 }
 
-void Shader::CheckShaderError(HRESULT hr, const ComPtr<ID3DBlob>& error)
+void Shader::CheckShaderError(HRESULT hr, const Microsoft::WRL::ComPtr<ID3DBlob>& error)
 {
 	// shader error 발생 시 메시지 박스를 통해 에러 메시지 출력
 	if (FAILED(hr))

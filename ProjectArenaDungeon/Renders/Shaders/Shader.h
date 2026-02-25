@@ -29,7 +29,7 @@ protected:
 private:
 	// CheckShaderError
 	// - 컴파일 실패 시 메시지 박스를 통해 에러 메시지를 출력
-	void CheckShaderError(HRESULT hr, const ComPtr<ID3DBlob>& error);
+	void CheckShaderError(HRESULT hr, const Microsoft::WRL::ComPtr<ID3DBlob>& error);
 
 protected:
 	std::wstring path = L"";

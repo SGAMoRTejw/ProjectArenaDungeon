@@ -102,7 +102,7 @@ void GraphicsManager::Initialize()
 void GraphicsManager::CreateBackBuffer()
 {
     // backBuffer -> Texture2D
-    ComPtr<ID3D11Texture2D> backBuffer;
+    Microsoft::WRL::ComPtr<ID3D11Texture2D> backBuffer;
     
     HRESULT hr = swapChain->GetBuffer
     (

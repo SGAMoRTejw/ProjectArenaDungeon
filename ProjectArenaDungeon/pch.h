@@ -30,6 +30,7 @@
 #include <vector>
 #include <span>
 #include <unordered_map>
+#include <algorithm>
 
 // DirectX D3D11
 #include <d3d11.h>
@@ -40,12 +41,12 @@
 
 // WRL (ComPtr)
 #include <wrl.h>
-using Microsoft::WRL::ComPtr;
 
 // DirectXTK SimpleMath
 #include "_Libraries/DirectXTK/SimpleMath.h"
-using namespace DirectX;
-using namespace SimpleMath;
+
+// DirectXTex
+#include <DirectXTex.h>
 
 // Extern Globals
 // - Window 생성 및 런타임에서 초기화 되는 전역 값
@@ -91,6 +92,8 @@ static CLASS_NAME& GetInstance()								\
 #include "Managers/TimeManager.h"
 #include "Managers/InputManager.h"
 #include "Managers/GraphicsManager.h"
+#include "Managers/ShaderManager.h"
+#include "Managers/TextureManager.h"
 
 // Manager access macros
 // - 반복되는 접근 코드를 간결하게 사용하기 위한 편의성 매크로
@@ -100,3 +103,5 @@ static CLASS_NAME& GetInstance()								\
 #define GRAPHICS GraphicsManager::GetInstance()
 #define DEVICE GRAPHICS.GetDevice()
 #define DEVICE_CONTEXT GRAPHICS.GetDeviceContext()
+#define SHADERS ShaderManager::GetInstance()
+#define TEXTURES TextureManager::GetInstance()

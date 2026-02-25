@@ -26,7 +26,7 @@ public:
 
 	// GetMousePos
 	// - 현재 마우스 좌표
-	Vector2 GetMousePos() const { return mousePos; }
+	DirectX::SimpleMath::Vector2 GetMousePos() const { return mousePos; }
 
 private:
 	// 키 상태 정의
@@ -45,5 +45,5 @@ private:
 	std::array<unsigned char, MAX_INPUT_KEY> keyMap = { 0 };
 
 	// 마우스 좌표
-	Vector2 mousePos{};
+	DirectX::SimpleMath::Vector2 mousePos{};
 };

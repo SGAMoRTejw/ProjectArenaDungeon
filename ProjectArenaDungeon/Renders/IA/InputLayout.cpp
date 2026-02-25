@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "InputLayout.h"
 
-void InputLayout::Create(std::span<const D3D11_INPUT_ELEMENT_DESC> descs, const ComPtr<ID3DBlob>& blob)
+void InputLayout::Create(std::span<const D3D11_INPUT_ELEMENT_DESC> descs, const Microsoft::WRL::ComPtr<ID3DBlob>& blob)
 {
 	if (descs.empty() || !blob.Get())
 	{

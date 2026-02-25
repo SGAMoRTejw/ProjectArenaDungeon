@@ -29,6 +29,6 @@ public:
 	ID3D11VertexShader* GetResource() const { return shader.Get(); }
 
 private:
-	ComPtr<ID3DBlob> blob;				// 컴파일된 바이트코드
-	ComPtr<ID3D11VertexShader> shader;	// VertexShader 리소스
+	Microsoft::WRL::ComPtr<ID3DBlob> blob;				// 컴파일된 바이트코드
+	Microsoft::WRL::ComPtr<ID3D11VertexShader> shader;	// VertexShader 리소스
 };

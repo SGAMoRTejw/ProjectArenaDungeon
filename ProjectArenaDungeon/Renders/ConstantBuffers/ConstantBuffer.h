@@ -68,5 +68,5 @@ protected:
 	bool bDirty = true;				// 데이터 변경 여부 플래그 (불필요한 Map/Unmap 방지)
 
 private:
-	ComPtr<ID3D11Buffer> buffer;	// GPU 상수 버퍼 리소스
+	Microsoft::WRL::ComPtr<ID3D11Buffer> buffer;	// GPU 상수 버퍼 리소스
 };
