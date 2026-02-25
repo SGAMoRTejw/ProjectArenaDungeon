@@ -150,6 +150,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Components\Components.cpp" />
+    <ClCompile Include="Components\Transform.cpp" />
     <ClCompile Include="GameInstance.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Managers\GraphicsManager.cpp" />
@@ -176,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\Component.h" />
+    <ClInclude Include="Components\Transform.h" />
     <ClInclude Include="GameInstance.h" />
     <ClInclude Include="Managers\GraphicsManager.h" />
     <ClInclude Include="Managers\InputManager.h" />
