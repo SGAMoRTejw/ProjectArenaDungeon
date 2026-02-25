@@ -17,7 +17,7 @@ public:
 	void Bind(UINT slot = 0);
 
 	std::wstring GetPath() const { return path; }
-	Vector2 GetSize() const { return Vector2((float)metaData.width, (float)metaData.height); }
+	DirectX::SimpleMath::Vector2 GetSize() const { return DirectX::SimpleMath::Vector2((float)metaData.width, (float)metaData.height); }
 	Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> GetSRV() const { return srv; }
 
 private:

@@ -2,6 +2,9 @@
 
 // VertexType
 // - InputLayout 생성에 필요한 입력 description과 정점 데이터 구조를 정의
+
+using namespace DirectX::SimpleMath;
+
 struct Vertex
 {
 	Vertex() = default;

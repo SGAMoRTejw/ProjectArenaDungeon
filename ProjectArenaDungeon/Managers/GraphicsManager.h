@@ -45,18 +45,18 @@ public:
 
 private:
 	// D3D objects
-	ComPtr<ID3D11Device> device;
-	ComPtr<ID3D11DeviceContext> deviceContext;
-	ComPtr<IDXGISwapChain> swapChain;
+	Microsoft::WRL::ComPtr<ID3D11Device> device;
+	Microsoft::WRL::ComPtr<ID3D11DeviceContext> deviceContext;
+	Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain;
 
-	ComPtr<ID3D11RenderTargetView> rtv;
+	Microsoft::WRL::ComPtr<ID3D11RenderTargetView> rtv;
 	D3D11_VIEWPORT viewport{};
 	
 	// Clear color (¹è°æ»ö)
-	Color clearColor = { 0.4f, 0.4f, 0.4f, 1.0f };
+	DirectX::SimpleMath::Color clearColor = { 0.4f, 0.4f, 0.4f, 1.0f };
 
 	// states
-	ComPtr<ID3D11SamplerState> samplerPoint;
-	ComPtr<ID3D11SamplerState> samplerLinear;
-	ComPtr<ID3D11BlendState> blendState;
+	Microsoft::WRL::ComPtr<ID3D11SamplerState> samplerPoint;
+	Microsoft::WRL::ComPtr<ID3D11SamplerState> samplerLinear;
+	Microsoft::WRL::ComPtr<ID3D11BlendState> blendState;
 };

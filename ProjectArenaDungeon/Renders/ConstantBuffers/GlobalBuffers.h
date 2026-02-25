@@ -6,7 +6,7 @@
 // - 오브젝트의 월드 변환 행렬
 struct WorldData
 {
-	Matrix world;
+	DirectX::SimpleMath::Matrix world;
 };
 
 // WorldBuffer
@@ -16,7 +16,7 @@ class WorldBuffer : public ConstantBuffer<WorldData>
 public:
 	WorldBuffer() : ConstantBuffer() {}
 
-	void SetWorldMatrix(const Matrix& world)
+	void SetWorldMatrix(const DirectX::SimpleMath::Matrix& world)
 	{
 		data.world = world.Transpose();
 
@@ -30,8 +30,8 @@ public:
 // - 카메라 View / Projection 행렬
 struct ViewProjData
 {
-	Matrix view;
-	Matrix proj;
+	DirectX::SimpleMath::Matrix view;
+	DirectX::SimpleMath::Matrix proj;
 };
 
 // ViewProjectionBuffer
@@ -41,14 +41,14 @@ class ViewProjectionBuffer : public ConstantBuffer<ViewProjData>
 public:
 	ViewProjectionBuffer() : ConstantBuffer() {}
 
-	void SetViewMatrix(const Matrix& view)
+	void SetViewMatrix(const DirectX::SimpleMath::Matrix& view)
 	{
 		data.view = view.Transpose();
 
 		bDirty = true;
 	}
 
-	void SetProjectionMatrix(const Matrix& proj)
+	void SetProjectionMatrix(const DirectX::SimpleMath::Matrix& proj)
 	{
 		data.proj = proj.Transpose();
 
@@ -60,7 +60,7 @@ public:
 // - 단색용 색상 정보
 struct ColorData
 {
-	Color color;
+	DirectX::SimpleMath::Color color;
 };
 
 // ColorBuffer
@@ -70,7 +70,7 @@ class ColorBuffer : public ConstantBuffer<ColorData>
 public:
 	ColorBuffer() : ConstantBuffer() {}
 
-	void SetColor(Color color)
+	void SetColor(DirectX::SimpleMath::Color color)
 	{
 		if (data.color == color)
 			return;
@@ -79,15 +79,15 @@ public:
 		bDirty = true;
 	}
 
-	Color GetColor() const { return data.color; }
+	DirectX::SimpleMath::Color GetColor() const { return data.color; }
 };
 
 // FrameData
 // - 스프라이트/텍스처 아틀라스 프레임 정보 (UV 시작점, 크기)
 struct FrameData
 {
-	Vector2 startUV;
-	Vector2 sizeUV;
+	DirectX::SimpleMath::Vector2 startUV;
+	DirectX::SimpleMath::Vector2 sizeUV;
 };
 
 // FrameBuffer
@@ -97,7 +97,7 @@ class FrameBuffer : public ConstantBuffer<FrameData>
 public:
 	FrameBuffer() : ConstantBuffer() {}
 
-	void SetFrameData(Vector2 start, Vector2 size)
+	void SetFrameData(DirectX::SimpleMath::Vector2 start, DirectX::SimpleMath::Vector2 size)
 	{
 		if (data.startUV == start && data.sizeUV == size)
 			return;

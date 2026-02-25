@@ -23,7 +23,7 @@ public:
 	void Bind();
 
 private:
-	ComPtr<ID3D11Buffer> buffer;
+	Microsoft::WRL::ComPtr<ID3D11Buffer> buffer;
 	UINT stride = 0;
 	UINT offset = 0;
 	UINT count = 0;

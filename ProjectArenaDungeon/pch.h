@@ -41,12 +41,9 @@
 
 // WRL (ComPtr)
 #include <wrl.h>
-using Microsoft::WRL::ComPtr;
 
 // DirectXTK SimpleMath
 #include "_Libraries/DirectXTK/SimpleMath.h"
-using namespace DirectX;
-using namespace SimpleMath;
 
 // DirectXTex
 #include <DirectXTex.h>

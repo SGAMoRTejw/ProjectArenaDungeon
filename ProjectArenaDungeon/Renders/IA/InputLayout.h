@@ -9,7 +9,7 @@ class InputLayout
 public:
 	// Create
 	// - 정점 레이아웃(desc)과 VertexShader 바이트코드(blob)을 이용해 InputLayout 생성
-	void Create(std::span<const D3D11_INPUT_ELEMENT_DESC> descs, const ComPtr<ID3DBlob>& blob);
+	void Create(std::span<const D3D11_INPUT_ELEMENT_DESC> descs, const Microsoft::WRL::ComPtr<ID3DBlob>& blob);
 
 	// Bind
 	// - IA 단계에 InputLayout 바인딩
@@ -18,5 +18,5 @@ public:
 	ID3D11InputLayout* GetResource() const { return inputLayout.Get(); }
 
 private:
-	ComPtr<ID3D11InputLayout> inputLayout;
+	Microsoft::WRL::ComPtr<ID3D11InputLayout> inputLayout;
 };

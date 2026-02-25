@@ -18,11 +18,11 @@ Material::Material(std::wstring shaderPath, std::span<const D3D11_INPUT_ELEMENT_
 
 	// 기본 색상(계수) = 흰색
 	cb = std::make_unique<ColorBuffer>();
-	cb->SetColor(Color(1, 1, 1, 1));
+	cb->SetColor(DirectX::SimpleMath::Color(1, 1, 1, 1));
 
 	// 기본 프레임(전체 UV)
 	frameBuffer = std::make_shared<FrameBuffer>();
-	frameBuffer->SetFrameData(Vector2(0.0f, 0.0f), Vector2(1.0f, 1.0f));
+	frameBuffer->SetFrameData(DirectX::SimpleMath::Vector2(0.0f, 0.0f), DirectX::SimpleMath::Vector2(1.0f, 1.0f));
 }
 
 void Material::SetTexture(const std::wstring& path)
@@ -30,12 +30,12 @@ void Material::SetTexture(const std::wstring& path)
 	texture = TEXTURES.LoadTexture(path);
 }
 
-Color Material::GetColor() const
+DirectX::SimpleMath::Color Material::GetColor() const
 {
-	return cb ? cb->GetColor() : Color(1, 1, 1, 1);
+	return cb ? cb->GetColor() : DirectX::SimpleMath::Color(1, 1, 1, 1);
 }
 
-void Material::SetColor(Color color)
+void Material::SetColor(DirectX::SimpleMath::Color color)
 {
 	if (cb) cb->SetColor(color);
 }

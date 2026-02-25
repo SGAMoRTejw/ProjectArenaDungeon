@@ -27,8 +27,8 @@ public:
 	void SetTexture(std::shared_ptr<Texture> texture) { this->texture = std::move(texture); }
 	void SetTexture(const std::wstring& path);
 
-	Color GetColor() const;
-	void SetColor(Color color);
+	DirectX::SimpleMath::Color GetColor() const;
+	void SetColor(DirectX::SimpleMath::Color color);
 
 	// Point/Linear 샘플링 선택
 	void SetPointSampler(bool val) { bPointSampling = val; }
