@@ -1,5 +1,9 @@
 #pragma once
 
+#include <memory>
+#include <vector>
+#include <cstddef>
+
 class Scene;
 
 // GameInstance

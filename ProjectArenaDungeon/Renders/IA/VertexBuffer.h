@@ -1,8 +1,10 @@
 #pragma once
+
+#include <vector>
+
 // VertexBuffer
 // - 렌더링 파이프라인의 IA(Input Assembler) 단계에서 사용하는 정점 버퍼 클래스
 // - 정점 데이터 생성(Create) 및 IA 바인딩(Bind)
-
 class VertexBuffer
 {
 public:

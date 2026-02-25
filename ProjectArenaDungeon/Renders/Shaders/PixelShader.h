@@ -2,6 +2,8 @@
 #include "pch.h"
 #include "Shader.h"
 
+#include <string>
+
 // PixelShader
 // - HLSL Pixel Shader를 컴파일하고 PixelShader 리소스를 생성하는 클래스
 class PixelShader : public Shader

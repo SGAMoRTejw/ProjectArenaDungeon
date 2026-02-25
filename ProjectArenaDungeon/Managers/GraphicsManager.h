@@ -1,10 +1,10 @@
 #pragma once
+
 // GraphicsManager
 // - DirectX11 Device, DeviceContext, SwapChain 및 렌더 타겟(RTV), 뷰포트를 관리
 // - 렌더링 시작(Begin) / 종료(End) 제공
 // - Sampler,Blend state 설정
 // - Window 생성(gHandle 값) 이후 초기화
-
 class GraphicsManager
 {
 	DECLARE_SINGLETON(GraphicsManager)

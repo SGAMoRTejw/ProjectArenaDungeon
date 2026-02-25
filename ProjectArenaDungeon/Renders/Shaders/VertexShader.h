@@ -2,6 +2,8 @@
 #include "pch.h"
 #include "Shader.h"
 
+#include <string>
+
 // VertexShader
 // - HLSL Vertex Shader를 컴파일하고 Vertex Shader 리소스를 생성하는 클래스
 // - InputLayout 생성 시 필요한 바이트코드(blob)를 보관

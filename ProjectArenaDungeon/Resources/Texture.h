@@ -3,7 +3,6 @@
 // Texture
 // - 이미지 파일을 로드하고 ShaderResourceView(SRV)를 생성/관리하는 클래스
 // - DirectXTex(LoadFromDDS/TGA/WIC, GenerateMipMaps)를 사용하여 다양한 포맷에 대응
-
 class Texture
 {
 public:
@@ -17,7 +16,7 @@ public:
 	void Bind(UINT slot = 0);
 
 	std::wstring GetPath() const { return path; }
-	DirectX::SimpleMath::Vector2 GetSize() const { return DirectX::SimpleMath::Vector2((float)metaData.width, (float)metaData.height); }
+	DirectX::SimpleMath::Vector2 GetSize() const { return DirectX::SimpleMath::Vector2(static_cast<float>(metaData.width), static_cast<float>(metaData.height)); }
 	Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> GetSRV() const { return srv; }
 
 private:
