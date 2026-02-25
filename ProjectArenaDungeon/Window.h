@@ -3,7 +3,7 @@
 class GameInstance;
 
 // WinDesc
-// - 윈도우 생성에 피룡한 초기 설정 정보
+// - 윈도우 생성에 필요한 초기 설정 정보
 // - 앱 이름, 인스턴스 핸들, 윈도우 핸들, 초기 크기 정보
 struct WinDesc
 {
@@ -17,6 +17,7 @@ struct WinDesc
 // Window
 // - 윈도우 생성 및 메시지 루프를 관리하는 클래스
 // - 윈도우 클래스 등록, 윈도우 생성, 메시지 루프(Run)
+// - GameInstance를 생성하고 메인 루프에서 Update / Render 호출
 class Window
 {
 public:
