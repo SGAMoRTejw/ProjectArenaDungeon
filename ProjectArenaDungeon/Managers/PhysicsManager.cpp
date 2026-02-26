@@ -1,8 +1,9 @@
 #include "pch.h"
 #include "PhysicsManager.h"
 
-//#include "Components/Collider.h"
 #include "Objects/Object.h"
+
+#include "Components/Collider.h"
 
 using Vector2 = DirectX::SimpleMath::Vector2;
 
@@ -68,57 +69,56 @@ void PhysicsManager::SetGravity(Vector2 gravity)
 void PhysicsManager::ProcessEvents()
 {
 	// NOTE: Sensor 이벤트 처리
-	// - Collider 컴포넌트 생성까지 빌드 오류 방지를 위해 임시 주석 처리
-	//const b2SensorEvents sEvents = b2World_GetSensorEvents(worldId);
-	//
-	//auto HandleSensor = [](b2ShapeId sensorId, b2ShapeId visitorId, bool isBegin)
-	//	{
-	//		if (!b2Shape_IsValid(sensorId) || !b2Shape_IsValid(visitorId))
-	//			return;
-	//
-	//		auto* colSensor = static_cast<Collider*>(b2Shape_GetUserData(sensorId));
-	//		auto* colVisitor = static_cast<Collider*>(b2Shape_GetUserData(visitorId));
-	//
-	//		if (!colSensor || !colVisitor)
-	//			return;
-	//
-	//		if (auto* owner = colSensor->GetOwner())
-	//			isBegin ? owner->OnCollisionEnter(colVisitor) : owner->OnCollisionExit(colVisitor);
-	//
-	//		if (auto* visitor = colVisitor->GetOwner())
-	//			isBegin ? visitor->OnCollisionEnter(colSensor) : visitor->OnCollisionExit(colSensor);
-	//	};
-	//
-	//for (int i = 0; i < sEvents.beginCount; ++i)
-	//	HandleSensor(sEvents.beginEvents[i].sensorShapeId, sEvents.beginEvents[i].visitorShapeId, true);
-	//
-	//for (int i = 0; i < sEvents.endCount; ++i)
-	//	HandleSensor(sEvents.endEvents[i].sensorShapeId, sEvents.endEvents[i].visitorShapeId, false);
-	//
-	//// NOTE: Contact 이벤트 처리
-	//const b2ContactEvents cEvents = b2World_GetContactEvents(worldId);
-	//
-	//auto HandleContact = [](b2ShapeId idA, b2ShapeId idB, bool isBegin)
-	//	{
-	//		if (!b2Shape_IsValid(idA) || !b2Shape_IsValid(idB))
-	//			return;
-	//
-	//		auto* colA = static_cast<Collider*>(b2Shape_GetUserData(idA));
-	//		auto* colB = static_cast<Collider*>(b2Shape_GetUserData(idB));
-	//
-	//		if (!colA || !colB)
-	//			return;
-	//
-	//		if (auto* ownerA = colA->GetOwner())
-	//			isBegin ? ownerA->OnCollisionEnter(colB) : ownerA->OnCollisionExit(colB);
-	//
-	//		if (auto* ownerB = colB->GetOwner())
-	//			isBegin ? ownerB->OnCollisionEnter(colA) : ownerB->OnCollisionExit(colA);
-	//	};
-	//
-	//for (int i = 0; i < cEvents.beginCount; ++i)
-	//	HandleContact(cEvents.beginEvents[i].shapeIdA, cEvents.beginEvents[i].shapeIdB, true);
-	//
-	//for (int i = 0; i < cEvents.endCount; ++i)
-	//	HandleContact(cEvents.endEvents[i].shapeIdA, cEvents.endEvents[i].shapeIdB, false);
+	const b2SensorEvents sEvents = b2World_GetSensorEvents(worldId);
+	
+	auto HandleSensor = [](b2ShapeId sensorId, b2ShapeId visitorId, bool isBegin)
+		{
+			if (!b2Shape_IsValid(sensorId) || !b2Shape_IsValid(visitorId))
+				return;
+	
+			auto* colSensor = static_cast<Collider*>(b2Shape_GetUserData(sensorId));
+			auto* colVisitor = static_cast<Collider*>(b2Shape_GetUserData(visitorId));
+	
+			if (!colSensor || !colVisitor)
+				return;
+	
+			if (auto* owner = colSensor->GetOwner())
+				isBegin ? owner->OnCollisionEnter(colVisitor) : owner->OnCollisionExit(colVisitor);
+	
+			if (auto* visitor = colVisitor->GetOwner())
+				isBegin ? visitor->OnCollisionEnter(colSensor) : visitor->OnCollisionExit(colSensor);
+		};
+	
+	for (int i = 0; i < sEvents.beginCount; ++i)
+		HandleSensor(sEvents.beginEvents[i].sensorShapeId, sEvents.beginEvents[i].visitorShapeId, true);
+	
+	for (int i = 0; i < sEvents.endCount; ++i)
+		HandleSensor(sEvents.endEvents[i].sensorShapeId, sEvents.endEvents[i].visitorShapeId, false);
+	
+	// NOTE: Contact 이벤트 처리
+	const b2ContactEvents cEvents = b2World_GetContactEvents(worldId);
+	
+	auto HandleContact = [](b2ShapeId idA, b2ShapeId idB, bool isBegin)
+		{
+			if (!b2Shape_IsValid(idA) || !b2Shape_IsValid(idB))
+				return;
+	
+			auto* colA = static_cast<Collider*>(b2Shape_GetUserData(idA));
+			auto* colB = static_cast<Collider*>(b2Shape_GetUserData(idB));
+	
+			if (!colA || !colB)
+				return;
+	
+			if (auto* ownerA = colA->GetOwner())
+				isBegin ? ownerA->OnCollisionEnter(colB) : ownerA->OnCollisionExit(colB);
+	
+			if (auto* ownerB = colB->GetOwner())
+				isBegin ? ownerB->OnCollisionEnter(colA) : ownerB->OnCollisionExit(colA);
+		};
+	
+	for (int i = 0; i < cEvents.beginCount; ++i)
+		HandleContact(cEvents.beginEvents[i].shapeIdA, cEvents.beginEvents[i].shapeIdB, true);
+	
+	for (int i = 0; i < cEvents.endCount; ++i)
+		HandleContact(cEvents.endEvents[i].shapeIdA, cEvents.endEvents[i].shapeIdB, false);
 }
