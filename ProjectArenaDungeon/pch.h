@@ -56,11 +56,6 @@ extern HWND gHandle;
 extern float gWinWidth;
 extern float gWinHeight;
 
-// Constants
-constexpr float epsilon = 1e-5f;
-constexpr DirectX::SimpleMath::Vector2 VEC2_ZERO = DirectX::SimpleMath::Vector2(0.0f, 0.0f);
-constexpr DirectX::SimpleMath::Vector2 VEC2_ONE = DirectX::SimpleMath::Vector2(1.0f, 1.0f);
-
 // Window default size
 #define WIN_DEFAULT_WIDTH 1280
 #define WIN_DEFAULT_HEIGHT 720
@@ -98,14 +93,15 @@ static CLASS_NAME& GetInstance()								\
 #include "Managers/GraphicsManager.h"
 #include "Managers/ShaderManager.h"
 #include "Managers/TextureManager.h"
+#include "Managers/PhysicsManager.h"
 
 // Manager access macros
 // - 반복되는 접근 코드를 간결하게 사용하기 위한 편의성 매크로
 #define TIME TimeManager::GetInstance()
-#define DELTA TIME.GetDeltaTime()
 #define INPUT InputManager::GetInstance()
 #define GRAPHICS GraphicsManager::GetInstance()
 #define DEVICE GRAPHICS.GetDevice()
 #define DEVICE_CONTEXT GRAPHICS.GetDeviceContext()
 #define SHADERS ShaderManager::GetInstance()
 #define TEXTURES TextureManager::GetInstance()
+#define PHYSICS PhysicsManager::GetInstance()
