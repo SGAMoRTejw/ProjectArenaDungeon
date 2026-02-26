@@ -31,6 +31,12 @@
     <Filter Include="Scenes\TestScenes">
       <UniqueIdentifier>{2c8525f5-278f-48b3-a9b4-db24a364520c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{ff82a3dc-fc92-4783-ac35-1cbfe788daa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{edca8346-5807-4e52-b157-984bdc0d44c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -93,6 +99,12 @@
     </ClCompile>
     <ClCompile Include="Scenes\TestScenes\Scene_TestFeature.cpp">
       <Filter>Scenes\TestScenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\RigidBody.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\PhysicsManager.cpp">
+      <Filter>Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +180,18 @@
     </ClInclude>
     <ClInclude Include="Scenes\SceneList.h">
       <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\RigidBody.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\ConstantValues.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\PhysicsManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\PhysicsUtility.h">
+      <Filter>Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

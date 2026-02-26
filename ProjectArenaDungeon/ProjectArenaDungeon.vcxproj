@@ -150,11 +150,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Components\Components.cpp" />
+    <ClCompile Include="Components\RigidBody.cpp" />
     <ClCompile Include="Components\Transform.cpp" />
     <ClCompile Include="GameInstance.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Managers\GraphicsManager.cpp" />
     <ClCompile Include="Managers\InputManager.cpp" />
+    <ClCompile Include="Managers\PhysicsManager.cpp" />
     <ClCompile Include="Managers\ShaderManager.cpp" />
     <ClCompile Include="Managers\TextureManager.cpp" />
     <ClCompile Include="Managers\TimeManager.cpp" />
@@ -177,10 +179,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\Component.h" />
+    <ClInclude Include="Components\RigidBody.h" />
     <ClInclude Include="Components\Transform.h" />
+    <ClInclude Include="Config\ConstantValues.h" />
     <ClInclude Include="GameInstance.h" />
     <ClInclude Include="Managers\GraphicsManager.h" />
     <ClInclude Include="Managers\InputManager.h" />
+    <ClInclude Include="Managers\PhysicsManager.h" />
     <ClInclude Include="Managers\ShaderManager.h" />
     <ClInclude Include="Managers\TextureManager.h" />
     <ClInclude Include="Managers\TimeManager.h" />
@@ -202,6 +207,7 @@
     <ClInclude Include="Scenes\SceneList.h" />
     <ClInclude Include="Scenes\TestScenes\Scene_TestFeature.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Utilities\PhysicsUtility.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

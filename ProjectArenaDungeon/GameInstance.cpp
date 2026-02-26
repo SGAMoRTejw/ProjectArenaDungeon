@@ -28,6 +28,7 @@ void GameInstance::Init()
 	{
 		currentSceneIndex = 0;
 		currentScene = sceneList[currentSceneIndex];
+		PHYSICS.Init();
 		currentScene->Init();
 	}
 }
@@ -43,7 +44,14 @@ void GameInstance::Update()
 	//if (INPUT.GetKeyPress(VK_F5)) RequestSceneChange(currentSceneIndex, true);
 
 	if (currentScene)
+	{
 		currentScene->Update();
+
+		if (currentScene->UsesPhysics())
+		{
+			PHYSICS.Update();
+		}
+	}
 
 	ApplySceneChange();
 }
@@ -86,6 +94,7 @@ void GameInstance::ApplySceneChange()
 	if (currentScene)
 	{
 		currentScene->Destroy();
+		PHYSICS.Destroy();
 	}
 
 	// ¾À ±³Ã¼
@@ -99,6 +108,7 @@ void GameInstance::ApplySceneChange()
 	// »õ ¾À ÃÊ±âÈ­
 	if (currentScene)
 	{
+		PHYSICS.Init();
 		currentScene->Init();
 	}
 }
