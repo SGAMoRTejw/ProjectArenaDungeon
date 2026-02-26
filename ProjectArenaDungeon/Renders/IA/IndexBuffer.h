@@ -1,8 +1,10 @@
 #pragma once
+
+#include <vector>
+
 // IndexBuffer
 // - 렌더링 파이프라인의 IA(Input Assembler) 단계에서 사용하는 인덱스 버퍼 클래스
 // - 인덱스 데이터 생성(Create) 및 IA 바인딩(Bind)
-
 class IndexBuffer
 {
 public:

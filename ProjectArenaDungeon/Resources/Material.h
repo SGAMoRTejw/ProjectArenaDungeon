@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <span>
+
 class ColorBuffer;
 class FrameBuffer;
 class InputLayout;

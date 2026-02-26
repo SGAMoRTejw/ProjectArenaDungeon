@@ -13,6 +13,24 @@
     <Filter Include="Renders\IA">
       <UniqueIdentifier>{1998f8eb-5b5d-4b17-9799-083eb774fc77}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{9c4d37de-d1cb-480c-9cd9-6d90f73af201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{ecd635fe-7933-47b4-b3a0-7788adc2b72d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renders\Shaders">
+      <UniqueIdentifier>{43333cc6-d292-4ea0-ad78-8a797592804b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{cfa6228e-8beb-4de7-8af5-6fa241b14bc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{54ac301c-78c5-4b5c-92bb-f86e2b551f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\TestScenes">
+      <UniqueIdentifier>{2c8525f5-278f-48b3-a9b4-db24a364520c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -35,6 +53,46 @@
     </ClCompile>
     <ClCompile Include="Renders\IA\VertexBuffer.cpp">
       <Filter>Renders\IA</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInstance.cpp" />
+    <ClCompile Include="Components\Components.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Transform.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\ShaderManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\TextureManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Object.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\Shaders\Shader.cpp">
+      <Filter>Renders\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\Shaders\VertexShader.cpp">
+      <Filter>Renders\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Renders\Shaders\PixelShader.cpp">
+      <Filter>Renders\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources\Material.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources\Mesh.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources\Texture.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources\VertexType.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\TestScenes\Scene_TestFeature.cpp">
+      <Filter>Scenes\TestScenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +122,52 @@
     </ClInclude>
     <ClInclude Include="Renders\IA\VertexBuffer.h">
       <Filter>Renders\IA</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInstance.h" />
+    <ClInclude Include="Components\Component.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Transform.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\ShaderManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\TextureManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Object.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\Shaders\Shader.h">
+      <Filter>Renders\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\Shaders\VertexShader.h">
+      <Filter>Renders\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Renders\Shaders\PixelShader.h">
+      <Filter>Renders\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\Material.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\Mesh.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\Texture.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\VertexType.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\TestScenes\Scene_TestFeature.h">
+      <Filter>Scenes\TestScenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\Scene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\SceneList.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

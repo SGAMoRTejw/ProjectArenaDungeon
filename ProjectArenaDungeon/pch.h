@@ -22,6 +22,7 @@
 #include <cassert>
 
 // C++ runtime header
+#include <cstddef>
 #include <string>
 #include <memory>
 #include <iostream>
@@ -31,6 +32,7 @@
 #include <span>
 #include <unordered_map>
 #include <algorithm>
+#include <utility>
 
 // DirectX D3D11
 #include <d3d11.h>
@@ -56,6 +58,8 @@ extern float gWinHeight;
 
 // Constants
 constexpr float epsilon = 1e-5f;
+constexpr DirectX::SimpleMath::Vector2 VEC2_ZERO = DirectX::SimpleMath::Vector2(0.0f, 0.0f);
+constexpr DirectX::SimpleMath::Vector2 VEC2_ONE = DirectX::SimpleMath::Vector2(1.0f, 1.0f);
 
 // Window default size
 #define WIN_DEFAULT_WIDTH 1280

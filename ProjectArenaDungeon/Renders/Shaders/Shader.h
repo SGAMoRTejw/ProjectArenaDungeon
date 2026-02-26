@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 // Shader
 // - 셰이더 기반 클래스
 // - 파생 클래스(VertexShader / PixelShader)에서 실제 리소스 생성(Create) 및 바인딩(Bind)을 구현

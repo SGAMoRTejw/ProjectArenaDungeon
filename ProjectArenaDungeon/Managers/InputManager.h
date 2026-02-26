@@ -6,7 +6,6 @@ constexpr size_t MAX_INPUT_KEY = 256;
 // InputManager
 // - 키보드 / 마우스 입력 상태를 프레임 단위로 갱신하여 Down, Up, Press 상태로 제공
 // - Update()는 매 프레임 1회 호출
-
 class InputManager
 {
 	DECLARE_SINGLETON(InputManager)

@@ -1,9 +1,11 @@
 #pragma once
+
+#include <chrono>
+
 // TimeManager
 // - 프레임 기반 시간 정보(deltaTime, worldTime) 및 FPS를 계산/제공
 // - 목표 FPS(target FPS)가 설정된 경우 프레임 제한(WaitToTargetFrameRate()) 적용
 // - Update()는 매 프레임 1회 호출
-
 class TimeManager
 {
 	DECLARE_SINGLETON(TimeManager)
