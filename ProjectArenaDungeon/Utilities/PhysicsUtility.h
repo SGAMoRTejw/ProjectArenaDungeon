@@ -34,7 +34,7 @@ inline std::uint32_t operator|(std::uint32_t a, CollisionLayer b)
 	return a | static_cast<std::uint32_t>(b);
 }
 
-namespace PhysicsUtils
+namespace PhysicsUtility
 {
 // ScreenToWorld
 // - 화면 좌표(픽셀)를 물리 좌표(미터)로 변환
