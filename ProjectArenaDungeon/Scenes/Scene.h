@@ -39,6 +39,10 @@ public:
 			object->Render();
 	}
 
+	// UsesPhysics
+	// - 물리 세계를 적용할 씬은 override 해서 반환값을 true로 사용
+	virtual bool UsesPhysics() const { return false; }
+
 	// AddObject
 	// - 씬에 Object 추가
 	void AddObject(std::shared_ptr<Object> object)
