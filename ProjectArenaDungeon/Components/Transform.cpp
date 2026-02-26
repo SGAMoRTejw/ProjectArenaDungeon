@@ -7,8 +7,6 @@
 using Vector2 = DirectX::SimpleMath::Vector2;
 using Matrix = DirectX::SimpleMath::Matrix;
 
-constexpr float epsilonSq = epsilon * epsilon;
-
 Transform::Transform(std::string name)
 	: Component(std::move(name))
 {
