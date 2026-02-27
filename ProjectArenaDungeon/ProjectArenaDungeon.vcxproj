@@ -149,6 +149,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Components\BoxCollider.cpp" />
+    <ClCompile Include="Components\CircleCollider.cpp" />
+    <ClCompile Include="Components\Collider.cpp" />
     <ClCompile Include="Components\Components.cpp" />
     <ClCompile Include="Components\RigidBody.cpp" />
     <ClCompile Include="Components\Transform.cpp" />
@@ -178,6 +181,9 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Components\BoxCollider.h" />
+    <ClInclude Include="Components\CircleCollider.h" />
+    <ClInclude Include="Components\Collider.h" />
     <ClInclude Include="Components\Component.h" />
     <ClInclude Include="Components\RigidBody.h" />
     <ClInclude Include="Components\Transform.h" />
