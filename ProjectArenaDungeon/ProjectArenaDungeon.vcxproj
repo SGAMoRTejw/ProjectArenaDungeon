@@ -178,6 +178,9 @@
     <ClCompile Include="Resources\Texture.cpp" />
     <ClCompile Include="Resources\VertexType.cpp" />
     <ClCompile Include="Scenes\TestScenes\Scene_TestFeature.cpp" />
+    <ClCompile Include="Utilities\GeometryHelper.cpp" />
+    <ClCompile Include="Utilities\ObjectFactory.cpp" />
+    <ClCompile Include="Utilities\Random.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -213,7 +216,10 @@
     <ClInclude Include="Scenes\SceneList.h" />
     <ClInclude Include="Scenes\TestScenes\Scene_TestFeature.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Utilities\GeometryHelper.h" />
+    <ClInclude Include="Utilities\ObjectFactory.h" />
     <ClInclude Include="Utilities\PhysicsUtility.h" />
+    <ClInclude Include="Utilities\Random.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
