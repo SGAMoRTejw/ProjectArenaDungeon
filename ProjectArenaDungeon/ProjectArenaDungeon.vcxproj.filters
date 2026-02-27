@@ -115,6 +115,15 @@
     <ClCompile Include="Components\Collider.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="Utilities\GeometryHelper.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\ObjectFactory.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Random.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -210,6 +219,15 @@
     </ClInclude>
     <ClInclude Include="Components\Collider.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\GeometryHelper.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\ObjectFactory.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Random.h">
+      <Filter>Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
