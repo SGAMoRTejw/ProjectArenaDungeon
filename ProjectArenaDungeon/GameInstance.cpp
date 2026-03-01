@@ -4,6 +4,9 @@
 // Scenes
 #include "Scenes/SceneList.h"
 
+// Utilities
+#include "Utilities/Random.h"
+
 GameInstance::GameInstance() {}
 
 GameInstance::~GameInstance()
@@ -18,7 +21,7 @@ GameInstance::~GameInstance()
 void GameInstance::Init()
 {
 	// TODO: 전역 유틸 초기화
-	// Random::Init();
+	Random::Init();
 
 	// 씬 추가
 	//sceneList.push_back(std::make_shared<Loadout>());
