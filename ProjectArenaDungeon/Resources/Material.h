@@ -3,12 +3,12 @@
 #include <string>
 #include <span>
 
-class ColorBuffer;
-class FrameBuffer;
 class InputLayout;
 class VertexShader;
 class PixelShader;
 class Texture;
+class ColorBuffer;
+class FrameBuffer;
 
 // Material
 // - 렌더링에 필요한 ShaderSet(IL/VS/PS)과 Sampler, 텍스처, 상수 버퍼를 묶어 관리
@@ -20,6 +20,7 @@ public:
 	// - shaderPath + layoutDesc로 ShaderSet(IL/VS/PS)을 가져오고,
 	//   기본 Color/Frame 상수 버퍼를 초기화
 	Material(std::wstring shaderPath, std::span<const D3D11_INPUT_ELEMENT_DESC> layoutDesc);
+	~Material();
 
 	// Bind
 	// - InputLayout / VS / PS 바인딩

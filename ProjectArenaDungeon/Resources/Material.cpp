@@ -25,6 +25,8 @@ Material::Material(std::wstring shaderPath, std::span<const D3D11_INPUT_ELEMENT_
 	frameBuffer->SetFrameData(DirectX::SimpleMath::Vector2(0.0f, 0.0f), DirectX::SimpleMath::Vector2(1.0f, 1.0f));
 }
 
+Material::~Material() = default;
+
 void Material::SetTexture(const std::wstring& path)
 {
 	texture = TEXTURES.LoadTexture(path);

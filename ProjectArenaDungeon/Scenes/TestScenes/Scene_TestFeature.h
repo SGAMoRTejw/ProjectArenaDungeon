@@ -1,6 +1,8 @@
 #pragma once
 #include "Scenes/Scene.h"
 
+class Object;
+
 class Scene_TestFeature : public Scene
 {
 public:
@@ -11,5 +13,5 @@ public:
 	void Render() override;
 
 private:
-
+	std::shared_ptr<Object> testObj;
 };

@@ -35,7 +35,7 @@ void AttachMeshAndMaterial(
 	const std::wstring& texturePath = L""
 )
 {
-	auto renderer = make_shared<MeshRenderer>();
+	auto renderer = std::make_shared<MeshRenderer>();
 
 	renderer->SetMesh(mesh);
 	renderer->SetTopology(topology);
