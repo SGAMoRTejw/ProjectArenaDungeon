@@ -36,8 +36,8 @@ private:
 	void RebuildMatrices();
 
 private:
-	DirectX::SimpleMath::Matrix view = DirectX::SimpleMath::Matrix::Identity;
-	DirectX::SimpleMath::Matrix proj = DirectX::SimpleMath::Matrix::Identity;
+	DirectX::SimpleMath::Matrix view = {};
+	DirectX::SimpleMath::Matrix proj = {};
 
 	std::unique_ptr<ViewProjectionBuffer> vpBuffer;
 

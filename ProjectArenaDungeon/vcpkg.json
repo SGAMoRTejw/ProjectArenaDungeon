@@ -7,6 +7,11 @@
       "name": "directxtex",
       "features": [ "dx11" ]
     },
-    "box2d"
+    "box2d",
+    "tinyxml2",
+    {
+      "name": "imgui",
+      "features": [ "win32-binding", "dx11-binding" ]
+    }
   ]
 }
