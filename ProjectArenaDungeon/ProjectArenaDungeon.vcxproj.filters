@@ -124,6 +124,12 @@
     <ClCompile Include="Utilities\Random.cpp">
       <Filter>Utilities</Filter>
     </ClCompile>
+    <ClCompile Include="Components\MeshRenderer.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Camera.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -228,6 +234,12 @@
     </ClInclude>
     <ClInclude Include="Utilities\Random.h">
       <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\MeshRenderer.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Camera.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
