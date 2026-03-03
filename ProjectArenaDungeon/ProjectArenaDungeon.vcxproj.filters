@@ -130,6 +130,9 @@
     <ClCompile Include="Objects\Camera.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Components\Animator.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -240,6 +243,9 @@
     </ClInclude>
     <ClInclude Include="Objects\Camera.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Animator.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
